@@ -1,6 +1,20 @@
+# random temporary files
+*~
+\#*\#
+.\#*
+
+# eclipse project files
 .classpath
 .project
 .settings
-.scala_dependencies
+
+# maven build directories
 target
 build
+
+# scala
+.scala_dependencies
+
+# temp directories
+tmp
+temp
