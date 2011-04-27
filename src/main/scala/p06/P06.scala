@@ -21,10 +21,13 @@ object P06 {
 	def isPalindromeTailRecursive[A](list: List[A]): Boolean = {
 		// Start in the middle and work our way out to either side, comparing each pair
 		@tailrec
-		def isPalindrome[A](list: List[A], left: Int, right: Int, eval: Boolean): Boolean = left match {
-			case 0 => eval && (list.apply(left) == list.apply(right))
-			case _ => {
-				isPalindrome(list, left - 1, right + 1, eval && (list.apply(left) == list.apply(right)))
+		def isPalindrome[A](list: List[A], left: Int, right: Int, eval: Boolean): Boolean = {
+			val currentValid = eval && (list.apply(left) == list.apply(right))
+			left match {
+				case 0 => currentValid
+				case _ => {
+					isPalindrome(list, left - 1, right + 1, currentValid)
+				}
 			}
 		}
 		list match {
