@@ -168,11 +168,6 @@
 				<version>${log4j.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>commons-codec</groupId>
-				<artifactId>commons-codec</artifactId>
-				<version>${commons-codec.version}</version>
-			</dependency>
-			<dependency>
 				<groupId>org.scala-tools.testing</groupId>
 				<artifactId>${scala.specs.artifactId}</artifactId>
 				<version>${scala.specs.version}</version>
