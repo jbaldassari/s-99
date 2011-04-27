@@ -20,6 +20,7 @@ class P04Spec extends SpecificationWithJUnit {
 		"find the number of elements in a list tail-recursively" in {
 			val length = P04.lengthTailRecursive(List(1, 1, 2, 3, 5, 8))
 			length mustEqual 6
+			P04.lengthTailRecursive(List(1)) mustEqual 1
 		}
 	}
 }

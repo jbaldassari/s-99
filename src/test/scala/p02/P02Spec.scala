@@ -20,6 +20,7 @@ class P02Spec extends SpecificationWithJUnit {
 		"find the penultimate element of a list recursively" in {
 			val penultimate = P02.penultimateRecursive(List(1, 1, 2, 3, 5, 8))
 			penultimate mustEqual 5
+			P02.penultimateRecursive(List(1, 2)) mustEqual 1 
 		}
 	}
 }

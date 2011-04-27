@@ -20,11 +20,13 @@ class P05Spec extends SpecificationWithJUnit {
 		"reverse the elements of a list tail-recursively" in {
 			val reversed = P05.reverseTailRecursive(List(1, 1, 2, 3, 5, 8))
 			reversed mustEqual List(8, 5, 3, 2, 1, 1)
+			P05.reverseTailRecursive(List(1)) mustEqual List(1)
 		}
 		
 		"reverse the elements of a list in a purely functional way" in {
 			val reversed = P05.reverseFunctional(List(1, 1, 2, 3, 5, 8))
 			reversed mustEqual List(8, 5, 3, 2, 1, 1)
+			P05.reverseFunctional(List(1)) mustEqual List(1)
 		}
 	}
 }

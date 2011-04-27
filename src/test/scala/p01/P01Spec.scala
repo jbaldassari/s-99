@@ -15,6 +15,7 @@ class P01Spec extends SpecificationWithJUnit {
 		"find the last element of a list recursively" in {
 			val last = P01.lastRecursive(List(1, 1, 2, 3, 5, 8))
 			last mustEqual 8
+			P01.lastRecursive(List(1)) mustEqual 1
 		}
 	}
 }
