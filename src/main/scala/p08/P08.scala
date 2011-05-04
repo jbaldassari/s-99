@@ -66,9 +66,20 @@ object P08 {
 	 * @param list the list to compress.
 	 * @return the compressed list.
 	 */
-	def compressFunctional[A](list: List[A]): List[A] = list.foldRight(List[A]()) { 
-		(head, tail) => 
-			if (tail.isEmpty || (head != tail.head)) head :: tail 
-			else tail
+	def compressFunctionalRight[A](list: List[A]): List[A] = list.foldRight(List[A]()) { 
+		(elem, result) => 
+			if (result.isEmpty || (elem != result.head)) elem :: result 
+			else result
 	}
+
+	/**
+	 * Eliminate consecutive duplicates of list elements.
+	 * @param list the list to compress.
+	 * @return the compressed list.
+	 */
+	def compressFunctionalLeft[A](list: List[A]): List[A] = list.foldLeft(List[A]()) { 
+		(reversedResult, elem) => 
+			if (reversedResult.isEmpty || (elem != reversedResult.head)) elem :: reversedResult
+			else reversedResult
+	}.reverse
 }
